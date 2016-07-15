@@ -49,6 +49,7 @@ public class UserDataRepository implements UserRepository {
 
   @SuppressWarnings("Convert2MethodRef")
   @Override public Observable<List<User>> users() {
+    System.out.println("4. I am users use repository in Data Layer. I know where to get user list and should not care about this.");
     //we always get all users from the cloud
     final UserDataStore userDataStore = this.userDataStoreFactory.createCloudDataStore();
     return userDataStore.userEntityList()

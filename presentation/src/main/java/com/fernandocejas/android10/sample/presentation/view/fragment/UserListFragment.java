@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -127,6 +128,7 @@ public class UserListFragment extends BaseFragment implements UserListView {
 
   @Override public void renderUserList(Collection<UserModel> userModelCollection) {
     if (userModelCollection != null) {
+      Log.d("CLEAN_ARCHITECTURE","7. I am UserListFragment Presenter in UI (outer layer) . I am rendering user list ");
       this.usersAdapter.setUsersCollection(userModelCollection);
     }
   }

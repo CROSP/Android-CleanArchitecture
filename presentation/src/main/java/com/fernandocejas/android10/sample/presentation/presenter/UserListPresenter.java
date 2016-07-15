@@ -16,6 +16,8 @@
 package com.fernandocejas.android10.sample.presentation.presenter;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
+
 import com.fernandocejas.android10.sample.domain.User;
 import com.fernandocejas.android10.sample.domain.exception.DefaultErrorBundle;
 import com.fernandocejas.android10.sample.domain.exception.ErrorBundle;
@@ -112,6 +114,7 @@ public class UserListPresenter implements Presenter {
   }
 
   private void getUserList() {
+    Log.d("CLEAN_ARCHITECTURE","2. I am UserList Presenter in Presenter layer (second) . I got the request to load user data");
     this.getUserListUseCase.execute(new UserListSubscriber());
   }
 
@@ -128,7 +131,8 @@ public class UserListPresenter implements Presenter {
     }
 
     @Override public void onNext(List<User> users) {
-      UserListPresenter.this.showUsersCollectionInView(users);
+        Log.d("CLEAN_ARCHITECTURE","6. I am UserList Presenter in Presenter layer (second) . I have just got user data from domain layer");
+        UserListPresenter.this.showUsersCollectionInView(users);
     }
   }
 }

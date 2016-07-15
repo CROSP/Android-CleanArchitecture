@@ -38,6 +38,10 @@ public class GetUserList extends UseCase {
   }
 
   @Override public Observable buildUseCaseObservable() {
-    return this.userRepository.users();
+    System.out.println("3. I am GetUserList use case in Domain Layer. I am trying to get some data from data layer");
+    Observable userListObservable = this.userRepository.users();
+    System.out.println("5. I am GetUserList use case in Domain Layer. I have just got observable (data) from data layer");
+    return userListObservable;
+
   }
 }
